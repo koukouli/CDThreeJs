@@ -5,6 +5,8 @@ import * as dat from 'dat.gui'
 import * as GeometryCompressionUtils from 'three/examples/jsm/utils/GeometryCompressionUtils.js';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {FBXLoader} from 'three/examples/jsm/loaders/FBXLoader.js';
+import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader.js';
+
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
@@ -164,10 +166,9 @@ const DRACO_LOADER = new DRACOLoader( MANAGER ).setDecoderPath( 'three/examples/
 const KTX2_LOADER = new KTX2Loader( MANAGER ).setTranscoderPath( 'three//examples/js/libs/basis/' );
 const CusineUrl =new URL('../assets/Cuisine.glb',import.meta.url);
 
-const loader = new GLTFLoader()
 //const loader = new FBXLoader();
-// .setCrossOrigin('anonymous')
-//.setPath( '../assets/' )
+
+const loader = new GLTFLoader()
 .setDRACOLoader( DRACO_LOADER )
 .setKTX2Loader( KTX2_LOADER.detectSupport( renderer ) )
 .setMeshoptDecoder( MeshoptDecoder );
